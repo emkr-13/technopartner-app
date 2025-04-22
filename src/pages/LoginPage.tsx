@@ -28,6 +28,7 @@ const LoginPage = () => {
         src="/assets/logo-techno.png"
         alt="Technopartner Logo"
         className="logo"
+        style={{ width: "400px", height: "auto", marginBottom: "80px" }}
       />
 
       <form onSubmit={handleSubmit} className="form">

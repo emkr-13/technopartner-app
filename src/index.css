@@ -27,6 +27,9 @@ body {
   display: block;
   font-size: 14px;
   margin-bottom: 8px;
+  margin: center;
+  text-align: center;
+  color: #bbbbbb;
 }
 
 .form input {
@@ -39,16 +42,17 @@ body {
 }
 
 .form button {
-  width: 100%;
+  width: 50%; /* Lebar tombol 50% dari kontainer */
   padding: 12px;
-  background-color: #1e40af;
-  color: white;
+  background-color: #f1f1f1;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  margin: 0 auto; /* Menengahkan tombol secara horizontal */
+  display: block; /* Pastikan tombol menjadi elemen block */
 }
-
 .form button:hover {
   background-color: #1e3a8a;
 }
