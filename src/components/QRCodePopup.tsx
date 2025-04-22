@@ -8,15 +8,16 @@ interface QRCodePopupProps {
 const QRCodePopup: React.FC<QRCodePopupProps> = ({ qrUrl, onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white p-8 rounded-lg max-w-sm text-center">
+      <div className="bg-white p-6 rounded-lg max-w-xs md:max-w-sm text-center relative">
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-red-500 hover:text-red-700"
+          className="absolute top-2 right-2 bg-gray-200 rounded-full p-1"
         >
-          X
+          <img src="/assets/close-x.svg" alt="Close" className="w-4 h-4" />
         </button>
-        <p className="mb-4">Show the QR Code below to the cashier</p>
-        <img src={qrUrl} alt="QR Code" className="w-32 mx-auto" />
+
+        <p className="mb-4 text-sm">Show the QR Code below to the cashier</p>
+        <img src={qrUrl} alt="QR Code" className="w-32 h-32 mx-auto" />
       </div>
     </div>
   );

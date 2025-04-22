@@ -48,15 +48,15 @@ const MenuPage = () => {
       <main className="py-8 px-4">
         {/* Tabs */}
         <div className="mb-8">
-          <nav className="flex space-x-4">
+          <nav className="flex space-x-4 overflow-x-auto scrollbar-hide">
             {menuData?.map((category: any) => (
               <button
                 key={category.category_name}
                 onClick={() => handleTabClick(category.category_name)}
-                className={`px-4 py-2 rounded-lg ${
+                className={`px-6 py-2 rounded-full text-sm font-medium shadow-md transition ${
                   activeTab === category.category_name
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-200"
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {category.category_name}

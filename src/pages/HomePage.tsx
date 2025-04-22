@@ -27,8 +27,8 @@ const HomePage = () => {
         {homeData && (
           <>
             {/* Informasi Pengguna */}
-            <div className="bg-white p-4 mb-8 flex items-center justify-between">
-              <div>
+            <div className="bg-white p-4 mb-8 flex flex-col md:flex-row items-center justify-between">
+              <div className="text-center md:text-left mb-4 md:mb-0">
                 <p className="text-sm mb-2">{homeData.result.greeting},</p>
                 <h2 className="text-xl font-bold">{homeData.result.name}</h2>
               </div>
@@ -38,28 +38,34 @@ const HomePage = () => {
                 <img
                   src={homeData.result.qrcode}
                   alt="QR Code"
-                  className="w-12 h-12 mr-4 cursor-pointer"
+                  className="w-16 h-16 md:w-12 md:h-12 mb-4 cursor-pointer"
                   onClick={() => setShowQR(true)}
                 />
-                <div className="flex justify-between">
-                  <span className="text-sm">Saldo</span>
-                  <span className="font-bold">Rp {homeData.result.saldo}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm">Points</span>
-                  <span className="font-bold text-green-500">{homeData.result.point}</span>
+                <div className="text-center">
+                  <div className="flex justify-between text-sm">
+                    <span>Saldo:</span>
+                    <span className="font-bold">
+                      Rp {homeData.result.saldo}
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>Points:</span>
+                    <span className="font-bold text-green-500">
+                      {homeData.result.point}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* View All */}
-            <div className="bg-blue-900 text-white p-8 mb-8">
+            <div className="bg-blue-900 text-white p-8 mb-8 rounded-lg shadow-lg">
               <img
                 src="/assets/BG-banner.jpg"
                 alt="Technopartner Logo"
-                className="h-8 mb-4"
+                className="h-8 mb-4 mx-auto"
               />
-              <p className="text-sm">View All {'>'}</p>
+              <p className="text-sm text-center">View All {">"}</p>
             </div>
 
             {/* Slider Banner */}
