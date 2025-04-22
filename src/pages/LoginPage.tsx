@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../utils/authContext";
-import { Link, useNavigate } from "react-router-dom"; 
-import logo from "../../public/assets/logo-techno.png"; 
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const { login, isLoading } = useAuth();
@@ -15,8 +14,8 @@ const LoginPage = () => {
     setError(null); // Reset error
 
     try {
-      await login(); 
-      navigate("/home"); 
+      await login();
+      navigate("/home");
     } catch (error) {
       console.error("Login failed:", error);
       setError("Invalid credentials");
@@ -25,7 +24,11 @@ const LoginPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen p-4">
-      <img src={logo} alt="Technopartner Logo" className="w-1/2 mb-16" />
+      <img
+        src="/assets/logo-techno.png"
+        alt="Technopartner Logo"
+        className="w-1/2 mb-16"
+      />
 
       <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
         {error && <div className="text-red-500">{error}</div>}

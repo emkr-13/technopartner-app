@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
+
 // Define response types for OAuth2
 export interface OAuth2Response {
   token_type: string;
@@ -37,11 +38,11 @@ interface MenuResponse {
 }
 
 // Base URL and credentials from environment variables
-const API_BASE = process.env.REACT_APP_API_BASE_URL || '';
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID || '';
-const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET || '';
-const USERNAME = process.env.REACT_APP_LOGIN_USERNAME || '';
-const PASSWORD = process.env.REACT_APP_LOGIN_PASSWORD || '';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
+const CLIENT_ID = import.meta.env.VITE_CLIENT_ID || '';
+const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET || '';
+const USERNAME = import.meta.env.VITE_LOGIN_USERNAME || '';
+const PASSWORD = import.meta.env.VITE_LOGIN_PASSWORD || '';
 
 /**
  * Login using OAuth2
