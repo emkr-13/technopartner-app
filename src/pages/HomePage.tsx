@@ -10,7 +10,6 @@ const HomePage = () => {
   const { token } = useAuth();
   const [homeData, setHomeData] = useState<any | null>(null);
   const [showQR, setShowQR] = useState(false);
-  // console.log("Token:", token);
 
   useEffect(() => {
     if (token) {
@@ -20,8 +19,6 @@ const HomePage = () => {
     }
   }, [token]);
 
-  // console.log("Home Data:", homeData);
-
   return (
     <div className="min-h-screen bg-white">
       <HeaderHome />
@@ -29,42 +26,43 @@ const HomePage = () => {
       <main className="py-16 px-4">
         {homeData && (
           <>
-            <div className="bg-white p-4 mb-8">
-              <p className="text-sm mb-2">{homeData.result.greeting},</p>
-              <h2 className="text-xl font-bold">{homeData.result.name}</h2>
-              <div className="flex items-center mt-4">
+            {/* Informasi Pengguna */}
+            <div className="bg-white p-4 mb-8 flex items-center justify-between">
+              <div>
+                <p className="text-sm mb-2">{homeData.result.greeting},</p>
+                <h2 className="text-xl font-bold">{homeData.result.name}</h2>
+              </div>
+
+              {/* QR Code dan Informasi Saldo/Point */}
+              <div className="flex flex-col items-center">
                 <img
                   src={homeData.result.qrcode}
                   alt="QR Code"
                   className="w-12 h-12 mr-4 cursor-pointer"
                   onClick={() => setShowQR(true)}
                 />
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm">Saldo</span>
-                    <span className="font-bold">
-                      Rp {homeData.result.saldo}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm">Points</span>
-                    <span className="font-bold text-green-500">
-                      {homeData.result.point}
-                    </span>
-                  </div>
+                <div className="flex justify-between">
+                  <span className="text-sm">Saldo</span>
+                  <span className="font-bold">Rp {homeData.result.saldo}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm">Points</span>
+                  <span className="font-bold text-green-500">{homeData.result.point}</span>
                 </div>
               </div>
             </div>
 
+            {/* View All */}
             <div className="bg-blue-900 text-white p-8 mb-8">
               <img
                 src="/assets/BG-banner.jpg"
-                alt="banner"
+                alt="Technopartner Logo"
                 className="h-8 mb-4"
               />
-              <p className="text-sm">View All {">"}</p>
+              <p className="text-sm">View All {'>'}</p>
             </div>
 
+            {/* Slider Banner */}
             <BannerSlider banners={homeData.result.banner} />
           </>
         )}

@@ -73,6 +73,10 @@ body {
   .banner-slider {
     height: 200px !important;
   }
+
+  .footer {
+    padding: 16px 8px; /* Lebih kecil pada layar kecil */
+  }
 }
 .banner-slider {
   width: 100%;
