@@ -1,4 +1,4 @@
-const Header = () => {
+const HeaderHome = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-50">
       <img 
@@ -10,4 +10,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderHome;

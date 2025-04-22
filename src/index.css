@@ -42,7 +42,7 @@ body {
 }
 
 .form button {
-  width: 50%; /* Lebar tombol 50% dari kontainer */
+  width: 50%;
   padding: 12px;
   background-color: #f1f1f1;
   color: rgb(0, 0, 0);
@@ -50,8 +50,8 @@ body {
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  margin: 0 auto; /* Menengahkan tombol secara horizontal */
-  display: block; /* Pastikan tombol menjadi elemen block */
+  margin: 0 auto;
+  display: block;
 }
 .form button:hover {
   background-color: #1e3a8a;

@@ -1,4 +1,4 @@
-# bun-react-tailwind-template
+# bun-react
 
 To install dependencies:
 
@@ -9,7 +9,7 @@ bun install
 To start a development server:
 
 ```bash
-bun dev
+bun run dev
 ```
 
 To run for production:

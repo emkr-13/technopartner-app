@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchMenuData } from "../services/apiService";
 import MenuCard from "../components/MenuCard";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import HeaderMenu from "../components/HeaderMenu";
 
 const MenuPage = () => {
   const { category } = useParams<{ category: string }>();
@@ -26,7 +26,7 @@ const MenuPage = () => {
 
     fetchData();
   }, []);
-  console.log("Menu Data:", menuData);
+  // console.log("Menu Data:", menuData);
 
   useEffect(() => {
     // Set active tab berdasarkan URL parameter
@@ -43,7 +43,7 @@ const MenuPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <HeaderMenu />
 
       <main className="py-8 px-4">
         {/* Tabs */}

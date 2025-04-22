@@ -1,30 +1,30 @@
-import { useEffect, useState } from 'react';
-import { useAuth } from '../utils/authContext';
-import { fetchHomeData } from '../services/apiService';
-import BannerSlider from '../components/BannerSlider';
-import QRCodePopup from '../components/QRCodePopup';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import { useEffect, useState } from "react";
+import { useAuth } from "../utils/authContext";
+import { fetchHomeData } from "../services/apiService";
+import BannerSlider from "../components/BannerSlider";
+import QRCodePopup from "../components/QRCodePopup";
+import Footer from "../components/Footer";
+import HeaderHome from "../components/HeaderHome";
 
 const HomePage = () => {
   const { token } = useAuth();
   const [homeData, setHomeData] = useState<any | null>(null);
   const [showQR, setShowQR] = useState(false);
-  console.log('Token:', token);
+  console.log("Token:", token);
 
   useEffect(() => {
     if (token) {
       fetchHomeData(token)
-        .then(data => setHomeData(data))
-        .catch(error => console.error('Failed to fetch home data:', error));
+        .then((data) => setHomeData(data))
+        .catch((error) => console.error("Failed to fetch home data:", error));
     }
   }, [token]);
 
-  console.log('Home Data:', homeData);
+  console.log("Home Data:", homeData);
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <HeaderHome />
 
       <main className="py-16 px-4">
         {homeData && (
@@ -42,19 +42,27 @@ const HomePage = () => {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-sm">Saldo</span>
-                    <span className="font-bold">Rp {homeData.result.saldo}</span>
+                    <span className="font-bold">
+                      Rp {homeData.result.saldo}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm">Points</span>
-                    <span className="font-bold text-green-500">{homeData.result.point}</span>
+                    <span className="font-bold text-green-500">
+                      {homeData.result.point}
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-blue-900 text-white p-8 mb-8">
-              <img src="/assets/logo-techno.png" alt="Logo" className="h-8 mb-4" />
-              <p className="text-sm">View All {'>'}</p>
+              <img
+                src="/assets/logo-techno.png"
+                alt="Logo"
+                className="h-8 mb-4"
+              />
+              <p className="text-sm">View All {">"}</p>
             </div>
 
             <BannerSlider banners={homeData.result.banner} />
@@ -66,7 +74,7 @@ const HomePage = () => {
 
       {showQR && (
         <QRCodePopup
-          qrUrl={homeData?.result.qrcode || ''}
+          qrUrl={homeData?.result.qrcode || ""}
           onClose={() => setShowQR(false)}
         />
       )}
