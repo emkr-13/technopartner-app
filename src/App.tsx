@@ -11,7 +11,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/menu/:category" element={<MenuPage />} />
+          <Route path="/menu" element={<MenuPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

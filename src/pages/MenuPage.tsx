@@ -26,6 +26,7 @@ const MenuPage = () => {
 
     fetchData();
   }, []);
+  console.log("Menu Data:", menuData);
 
   useEffect(() => {
     // Set active tab berdasarkan URL parameter

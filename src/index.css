@@ -63,3 +63,48 @@ body {
   text-align: center;
   margin-bottom: 16px;
 }
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .banner-slider {
+    height: 200px !important;
+  }
+}
+.banner-slider {
+  width: 100%;
+  height: 300px;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-slider img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.banner-slider .slide {
+  display: none;
+}
+.banner-slider .slide.active {
+  display: block;
+}
+.banner-slider .slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.banner-slider .slide h2 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+}
+.banner-slider .slide p {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  color: white;
+  font-size: 16px;
+}

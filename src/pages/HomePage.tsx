@@ -10,6 +10,7 @@ const HomePage = () => {
   const { token } = useAuth();
   const [homeData, setHomeData] = useState<any | null>(null);
   const [showQR, setShowQR] = useState(false);
+  console.log('Token:', token);
 
   useEffect(() => {
     if (token) {
@@ -19,6 +20,8 @@ const HomePage = () => {
     }
   }, [token]);
 
+  console.log('Home Data:', homeData);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -27,7 +30,7 @@ const HomePage = () => {
         {homeData && (
           <>
             <div className="bg-white p-4 mb-8">
-              <p className="text-sm mb-2">Good Afternoon,</p>
+              <p className="text-sm mb-2">{homeData.result.greeting},</p>
               <h2 className="text-xl font-bold">{homeData.result.name}</h2>
               <div className="flex items-center mt-4">
                 <img

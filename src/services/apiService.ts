@@ -64,7 +64,11 @@ export const login = async (): Promise<OAuth2Response> => {
         },
       }
     );
-
+    if (response.status !== 200) {
+      throw new Error('Login failed');
+    }
+    const { access_token } = response.data;
+    console.log('Access Token:', access_token);
     return response.data;
   } catch (error) {
     console.error('Login failed:', error);
