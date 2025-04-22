@@ -112,3 +112,27 @@ body {
   color: white;
   font-size: 16px;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.footer span {
+  font-size: 12px;
+  color: #333;
+}

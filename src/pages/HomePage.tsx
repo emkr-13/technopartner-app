@@ -10,7 +10,7 @@ const HomePage = () => {
   const { token } = useAuth();
   const [homeData, setHomeData] = useState<any | null>(null);
   const [showQR, setShowQR] = useState(false);
-  console.log("Token:", token);
+  // console.log("Token:", token);
 
   useEffect(() => {
     if (token) {
@@ -20,7 +20,7 @@ const HomePage = () => {
     }
   }, [token]);
 
-  console.log("Home Data:", homeData);
+  // console.log("Home Data:", homeData);
 
   return (
     <div className="min-h-screen bg-white">
@@ -58,8 +58,8 @@ const HomePage = () => {
 
             <div className="bg-blue-900 text-white p-8 mb-8">
               <img
-                src="/assets/logo-techno.png"
-                alt="Logo"
+                src="/assets/BG-banner.jpg"
+                alt="banner"
                 className="h-8 mb-4"
               />
               <p className="text-sm">View All {">"}</p>
