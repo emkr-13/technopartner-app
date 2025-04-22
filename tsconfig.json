@@ -13,5 +13,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "exclude": ["vite.config.js"]
+  "exclude": ["vite.config.js",],
 }

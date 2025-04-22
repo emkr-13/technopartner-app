@@ -23,47 +23,33 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen p-4">
+    <div className="container">
       <img
         src="/assets/logo-techno.png"
         alt="Technopartner Logo"
-        className="w-1/2 mb-16"
+        className="logo"
       />
 
-      <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
-        {error && <div className="text-red-500">{error}</div>}
+      <form onSubmit={handleSubmit} className="form">
+        {error && <div className="error">{error}</div>}
 
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none"
-          />
-        </div>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <div>
-          <label htmlFor="password" className="block text-sm font-medium mb-1">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none"
-          />
-        </div>
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200"
-        >
+        <button type="submit" disabled={isLoading}>
           {isLoading ? "Loading..." : "Login"}
         </button>
       </form>
